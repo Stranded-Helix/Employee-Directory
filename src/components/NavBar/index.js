@@ -1,6 +1,6 @@
 import React from  "react";
 
-function Header() {
+export default function NavBar() {
   return (
     <div className="jumbotron jumbotron-fluid">
       <div className="container">
@@ -9,5 +9,3 @@ function Header() {
     </div>
   )
 }
-
-export default Header;
