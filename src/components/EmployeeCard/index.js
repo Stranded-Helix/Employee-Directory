@@ -1,21 +1,24 @@
 import React from "react";
+import "./style.css"
 
-export default function EmployeeCard() {
+export default function EmployeeCard(props) {
+
+    console.log(props);
     return (
-        <div class="card horizontal">
-            <div class="card-image">
-                <img src="" />
-            </div>
-            <div class="card-stacked blue-gradient">
-                <div class="card-content">
-                    <h5>Stolen Canvas</h5>
-                    <p>Heroku hosted website simulating a e-commerce site selling great works of art using HTML, CSS,
-                        express.js</p>
-                </div>
-                <div class="card-action">
-                    <a href="https://afternoon-ocean-89274.herokuapp.com/">Deployed App</a>
-                    <a href="https://github.com/chancevaughn/Stolen-Canvas">Github</a>
-                </div>
+        <div className="container">
+            <div className="justify-content-center">
+                {props.context.map(results => (
+                    <div className="ecard row">
+                        <div key={results.email} className="row">
+                            <div className="col-2"><img alt="Employee Image" src={results.picture.thumbnail} /></div>
+                            <div className="col-3">
+                                <div>{results.name.first} {results.name.last}</div>
+                                <div>{results.phone}</div>
+                                <div><a href={"mailto:" + results.email}>{results.email}</a></div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     )
