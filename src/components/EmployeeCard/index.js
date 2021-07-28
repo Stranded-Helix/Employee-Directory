@@ -9,6 +9,9 @@ export default function EmployeeCard(props) {
     return (
         <div className="container center">
             <button onClick={props.handleSort} className="btn btn-sm px-0 sort-button">Last Name: A-Z</button>
+            {props.searchButton &&
+                <button onClick={props.clearSearch} className="btn btn-sm px-0 sort-button">Clear Search: {props.searchButton}</button>
+            }
             {props.resultsFilter.map(results => (
                            <div className="ecard row">
                            <div key={results.name.first} className="row">
